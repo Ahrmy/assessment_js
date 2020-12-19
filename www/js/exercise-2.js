@@ -52,7 +52,16 @@ let data = `  "id", "m2", "antiguedad", "habitaciones", "baños", "amueblado", "
 149, 60, 11,  1, 1, false,  true
    `;
 
+//************** TOODO LO COMENTADO, SON CAMINOS QUE NO LLEGARÓN A BUEN PUERTO JIJIJIJIJIJ */
+
 const dataArray = data.trim().split('\n');
+// console.log(dataArray);
+
+// const dataArrayFinal = [];
+// for (let i = 0; i < dataArray.length; i++) {
+//   dataArrayFinal.push(dataArray[i].split(', '));
+//   //   console.log(dataArray[i]);
+// }
 
 const dataArrayFinal = [];
 dataArray.map((value) => {
