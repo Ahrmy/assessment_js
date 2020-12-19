@@ -52,4 +52,12 @@ let data = `  "id", "m2", "antiguedad", "habitaciones", "baños", "amueblado", "
 149, 60, 11,  1, 1, false,  true
    `;
 
-const data = 
+const dataArray = data.trim().split('\n');
+console.log(dataArray);
+
+const dataArrayFinal = [];
+for (let i = 0; i < dataArray.length; i++) {
+  const element = dataArray[i].split(',');
+}
+
+console.log(dataArrayFinal());
