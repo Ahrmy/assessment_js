@@ -53,11 +53,44 @@ let data = `  "id", "m2", "antiguedad", "habitaciones", "baños", "amueblado", "
    `;
 
 const dataArray = data.trim().split('\n');
-console.log(dataArray);
 
 const dataArrayFinal = [];
-for (let i = 0; i < dataArray.length; i++) {
-  const element = dataArray[i].split(',');
-}
+dataArray.map((value) => {
+  const tempArray = value.split(',');
+  //   console.log(tempArray);
+  const tempArray2 = [];
+  for (const dato of tempArray) {
+    //  console.log(dato);
+    tempArray2.push(dato.trim().replace('"', '').replace('"', ''));
+  }
+  dataArrayFinal.push(tempArray2);
+});
 
-console.log(dataArrayFinal());
+// const dataArrayNoSpace = [];
+// for (let i = 0; i < dataArray.length; i++) {
+//    const dataArrayFinal =[... ]
+//   function data() {
+//      for (const dato of dataArray[i]) {
+//        dataArrayFinal.push(dato.trim());
+//      } return dataArrayFinal
+//   }
+// }
+
+// const dataArrayNoSpace = dataArrayFinal.map((value) => {
+//   for (const dato of dataArrayFinal[value]) {
+//     return dato.trim();
+//   }
+// });
+
+// for (const value of dataArrayFinal[1]) {
+//   dataArrayFinal[1].push(value.trim());
+//   //   console.log(value);
+// }
+
+// const dataArrayFinal2 = [];
+// for (let i = 0; i < dataArray.length; i++) {
+//   const dataArrayRow = dataArray[i]..split(',');
+//   dataArrayFinal2.push(dataArrayRow);
+// }
+
+console.log(dataArrayFinal);
