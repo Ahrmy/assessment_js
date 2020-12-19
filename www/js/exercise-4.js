@@ -1,0 +1,41 @@
+/**
+ * #############################
+ * ##  E J E R C I C I O   4  ##
+ * #############################
+ *
+ * Obtener un array con los nombres de todos los municipios de la provincia de Lugo (Galicia)
+ * ordenados por orden alfabético inverso (de la Z a la A). Deberás hacer uso de fetch y
+ * async / await.
+ *
+ * Para facilitarte esta tarea dispones de la siguiente API: https://www.el-tiempo.net/api
+ *
+ * Debes entrar en la web y leer la documentación para encontrar la URL que necesitas. En
+ * este caso es bastante simple e intuitivo. ¡A por todas! ;)
+ *
+ * Nombre de la provincia
+ */
+
+'use strict';
+
+const urlMunicipios = 'https://www.el-tiempo.net/api/json/v2/provincias/27/municipios';
+
+async function peticion() {
+  const data = await (await fetch(urlMunicipios)).json();
+  return data;
+}
+
+async function municipios() {
+  const request = await peticion();
+  //   console.log(request.municipios);
+
+  const arrayNameProvincia = [];
+
+  for (const name of request.municipios) {
+    arrayNameProvincia.push(name.NOMBRE);
+    // console.log(name);
+  }
+  console.log(arrayNameProvincia);
+  const arrayNameProvinciaOrganized = arrayNameProvincia.sort();
+  console.log(arrayNameProvinciaOrganized.reverse());
+}
+municipios();
